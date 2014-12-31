@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Sticker Kadai</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="bower_components/core-icons/core-icons.html">
+  <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+  <link rel="import" href="bower_components/paper-item/paper-item.html">
+  <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+  <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="bower_components/core-pages/core-pages.html">
+  <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="bower_components/core-icons/social-icons.html">
+  <link rel="import" href="bower_components/core-icons/communication-icons.html">
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body unresolved fullbleed vertical layout>
+<core-header-panel mode="waterfall">
+
+<core-toolbar class="medium-tall">
+        <img src="images/logo.svg" height="100px"/>
+        <span flex></span>
+  <paper-tabs class="bottom fit" selected="0" flex>
+        <paper-tab>Kadai</paper-tab>
+        <paper-tab>About Us</paper-tab>
+        <paper-tab>Contact</paper-tab>
+  </paper-tabs>
+</core-toolbar>
+
+
+<div class="content" style="margin:0px 10% 0px 10%; padding:50px;">
+<core-pages selected="0"  style="backgorund:#BBDEFB;">
+  <div id="stickers-page">
+    <script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var stickers = JSON.parse(xmlhttp.responseText);
+        load_stickers(stickers);
+    }
+}
+xmlhttp.open("GET", "stickers.json", true);
+xmlhttp.send();
+
+function load_stickers(arr) {
+  var output="<table border=0 padding='10%'>";
+    for(var i = 0; i < arr.length; i=i+3) {
+          output+="<tr>";
+          for(j=i;((j<i+3)&&(j<arr.length));j++)
+          {
+          output+="<td><paper-shadow z='3'><paper-item noink style='background:white;'>"+
+          "<table width='100%'><tr><td><paper-shadow z='3'><img src='stickerkadai.github.io/stickers/"+arr[j].path+"' width='100%'></paper-shadow></td></tr>"+
+          "<tr><td><h3>"+arr[j].title+"</h3><a href='stickerkadai.github.io/stickers/"+arr[j].path+"' download><paper-fab icon='file-download' style='float:right;'></paper-fab></a></td></tr></table>"+
+          "</paper-item></paper-shadow></td>";
+          }
+          output+="</tr>";
+    }
+    document.getElementById("stickers-page").innerHTML+=output+"</table>";
+   }
+  </script>
+  </div>
+
+<div>
+<paper-shadow z="3">
+<paper-item style="background:white;" noink flex>
+<div align="center" flex>The masterminds behind StickerKadai...!</div>
+</paper-item>
+</paper-shadow>
+
+<paper-shadow z="3">
+<paper-item style="background:white;" noink>
+<div flex>
+
+<div style="float:left;padding:5%;" width="50%">
+<paper-shadow z="5">
+<paper-item style="background:white;" noink>
+<div width="50%"><paper-shadow z="3"><img src="images/Aravinth.jpg" width="100%"/></paper-shadow></div>
+</paper-item>
+<paper-item style="background:white;" noink>
+<div align="center" flex><strong>Aravinth</strong><br/>Web Designer, Android App Developer,<br />Free Software Activist</div>
+</paper-item>
+<paper-item style="background:white;" noink>
+<div align="center" flex>
+<a href="mailto://aravinthforever@gmail.com" target="_blank"><paper-fab icon="mail"></paper-fab></a>
+<a href="http://fb.com/aravinthforever" target="_blank"><paper-fab icon="social:post-facebook"></paper-fab></a>
+<a href="http://twitter.com/aravinthforever" target="_blank"><paper-fab icon="social:post-twitter"></paper-fab></a>
+<a href="http://github.com/aravinthforever" target="_blank"><paper-fab icon="social:post-github"></paper-fab></a>
+</div>
+</paper-item>
+</paper-shadow>
+</div>
+
+<div style="float:right;padding:5%;" width="50%">
+<paper-shadow z="5">
+<paper-item style="background:white;" noink>
+<div width="50%"><paper-shadow z="3"></paper-shadow><img src="images/Manoj.jpg" width="100%"/></paper-shadow></div>
+</paper-item>
+<paper-item style="background:white;" noink>
+<div align="center" flex><strong>Manoj</strong><br/>Freelance Designer, Inkscape Don,<br />Free Software Activist</div>
+</paper-item>
+<paper-item style="background:white;" noink>
+<div align="center" flex>
+<a href="mailto://manojopenworks@gmail.com" target="_blank"><paper-fab icon="mail"></paper-fab></a>
+<a href="http://fb.com/manojpenworks" target="_blank"><paper-fab icon="social:post-facebook"></paper-fab></a>
+<a href="http://twitter.com/manojpenworks" target="_blank"><paper-fab icon="social:post-twitter"></paper-fab></a>
+<a href="http://github.com/manojopenworks" target="_blank"><paper-fab icon="social:post-github"></paper-fab></a>
+</div>
+</paper-item>
+</paper-shadow>
+</div>
+
+</div>
+</paper-item>
+</paper-shadow>
+
+<paper-shadow z="3">
+<paper-item style="background:white;" noink flex>
+<div align="center" flex>Want to join us? Send a mail to <a href="mailto://stickerkadai@gmail.com" target="_blank">stickerkadai@gmail.com</a></div>
+</paper-item>
+</paper-shadow>
+</div>
+
+<div>
+
+<paper-shadow z="3">
+<paper-item style="background:white;" noink>
+<div align="center" flex>
+<a href="mailto://stickerkadai@gmail.com" target="_blank"><paper-fab icon="mail"></paper-fab></a>
+<paper-fab icon="communication:forum" raised onclick="document.querySelector('#feedback-form').toggle();"></paper-fab>
+<a href="http://fb.com/stickerkadai" target="_blank"><paper-fab icon="social:post-facebook"></paper-fab></a>
+<a href="http://twitter.com/stickerkadai" target="_blank"><paper-fab icon="social:post-twitter"></paper-fab></a>
+<a href="http://github.com/stickerkadai" target="_blank"><paper-fab icon="social:post-github"></paper-fab></a>
+</div>
+</paper-item>
+<paper-item style="background:white;" noink>
+<div align="center" flex>
+Want custom stickers? <paper-button raised style="background:#F44336;color:white;" onclick="document.querySelector('#under-development').toggle();">Donate</paper-button>
+</div>
+</paper-item>
+</paper-shadow>
+
+</div>
+
+</core-pages>
+    <paper-dialog id="under-development" backdrop transition="core-transition-top">
+      <p>This feature is still under development. Meanwhile you can mail us to <a href="mailto://stickerkadai@gmail.com" target="_blank">stickerkadai@gmail.com</a> to get custom stickers.</p>
+    </paper-dialog>
+    <paper-dialog id="feedback-form" width="50%" backdrop transition="core-transition-top">
+<iframe id="JotFormIFrame" onload="window.parent.scrollTo(0,0)" allowtransparency="true" src="http://form.jotform.me/form/43621235266451" frameborder="0" style="width:100%; height:644px; border:none;" scrolling="no"></iframe>
+<script type="text/javascript">window.handleIFrameMessage = function(e) {var args = e.data.split(":");var iframe = document.getElementById("JotFormIFrame");if (!iframe)return;switch (args[0]) {case "scrollIntoView":iframe.scrollIntoView();break;case "setHeight":iframe.style.height = args[1] + "px";break;case "collapseErrorPage":if (iframe.clientHeight > window.innerHeight) {iframe.style.height = window.innerHeight + "px";}break;case "reloadPage":window.location.reload();break;}};if (window.addEventListener) {window.addEventListener("message", handleIFrameMessage, false);} else if (window.attachEvent) {window.attachEvent("onmessage", handleIFrameMessage);}</script>    </paper-dialog>
+<script src="main.js"></script>
+</div>
+</core-header-panel>
+</body>
+</html>
