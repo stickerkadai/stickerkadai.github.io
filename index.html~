@@ -63,8 +63,8 @@ function load_stickers(arr) {
           for(j=i;((j<i+3)&&(j<arr.length));j++)
           {
           output+="<td><paper-shadow z='3'><paper-item noink style='background:white;'>"+
-          "<table width='100%'><tr><td><paper-shadow z='3'><img src='stickers/"+arr[j].path+"' width='100%'></paper-shadow></td></tr>"+
-          "<tr><td><h3>"+arr[j].title+"</h3><a href='stickers/"+arr[j].path+"' download><paper-fab icon='file-download' style='float:right;'></paper-fab></a></td></tr></table>"+
+          "<table width='100%'><tr><td><paper-shadow z='3'><img src='Stickers/"+arr[j].path+"' width='100%'></paper-shadow></td></tr>"+
+          "<tr><td><h3>"+arr[j].title+"</h3><a href='Stickers/"+arr[j].path+"' download><paper-fab icon='file-download' style='float:right;'></paper-fab></a></td></tr></table>"+
           "</paper-item></paper-shadow></td>";
           }
           output+="</tr>";
