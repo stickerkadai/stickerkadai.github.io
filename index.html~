@@ -110,7 +110,7 @@ function load_stickers(arr) {
 <div width="50%"><paper-shadow z="3"></paper-shadow><img src="images/Manoj.jpg" width="100%"/></paper-shadow></div>
 </paper-item>
 <paper-item style="background:white;" noink>
-<div align="center" flex><strong>Manoj</strong><br/>Freelance Designer, Inkscape Don,<br />Free Software Activist</div>
+<div align="center" flex><strong>Manoj</strong><br/>Freelance Designer, Inkscape Master,<br />Free Software Activist</div>
 </paper-item>
 <paper-item style="background:white;" noink>
 <div align="center" flex>
@@ -123,6 +123,15 @@ function load_stickers(arr) {
 </paper-shadow>
 </div>
 
+</div>
+</paper-item>
+</paper-shadow>
+
+<paper-shadow z="3">
+<paper-item style="background:white;" noink flex>
+<div flex>
+<b>Regarding the content:<b><br/>
+The code is licensed under <a href="http://www.gnu.org/licenses/gpl-3.0.txt" target="_blank">GNU GPL V3</a> license and the stickers are licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode.txt" target="_blank">CC-BY-SA</a> license. You can find the source of the site at https://github.com/stickerkadai/stickerkadai.github.io
 </div>
 </paper-item>
 </paper-shadow>
